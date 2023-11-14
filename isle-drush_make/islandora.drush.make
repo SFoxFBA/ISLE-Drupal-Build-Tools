@@ -71,6 +71,7 @@ projects[islandora_webform][download][url] = "https://github.com/commonmedia/isl
   projects[islandora_webform][download][branch] = "7.x"
 projects[islandora_videojs][download][url] = "https://github.com/Islandora/islandora_videojs.git"
 
+; AEDA required modules
 projects[eu_cookie_compliance][download][url] = "https://git.drupalcode.org/project/eu-cookie-compliance.git"
   projects[eu_cookie_compliance][download][branch] = "7.x-1.x"
 ; projects[islandora_multi_importer][download][url] = "https://github.com/mnylc/islandora_multi_importer.git"
