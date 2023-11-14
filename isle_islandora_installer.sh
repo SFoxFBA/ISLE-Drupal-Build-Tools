@@ -82,81 +82,16 @@ drush -y -u 1 en islandora_solr_metadata
 drush -y -u 1 en islandora_solr_facet_pages
 drush -y -u 1 en islandora_solr_views
 drush -y -u 1 en islandora_pdf
-drush -y -u 1 en islandora_audio
-drush -y -u 1 en islandora_book
-drush -y -u 1 en islandora_compound_object
-drush -y -u 1 en islandora_disk_image
-drush -y -u 1 en islandora_entities
-drush -y -u 1 en islandora_entities_csv_import
-drush -y -u 1 en islandora_basic_image
-drush -y -u 1 en islandora_large_image
-drush -y -u 1 en islandora_newspaper
-drush -y -u 1 en islandora_video
-drush -y -u 1 en islandora_web_archive
-drush -y -u 1 en islandora_premis
-drush -y -u 1 en islandora_checksum
-drush -y -u 1 en islandora_checksum_checker
-drush -y -u 1 en islandora_book_batch
-drush -y -u 1 en islandora_pathauto
 drush -y -u 1 en islandora_pdfjs
-drush -y -u 1 en islandora_videojs
-drush -y -u 1 en xml_forms
-drush -y -u 1 en xml_form_builder
-drush -y -u 1 en xml_schema_api
-drush -y -u 1 en xml_form_elements
-drush -y -u 1 en xml_form_api
-drush -y -u 1 en jquery_update
-drush -y -u 1 en zip_importer
-drush -y -u 1 en islandora_basic_image
-drush -y -u 1 en islandora_bibliography
-drush -y -u 1 en islandora_compound_object
-drush -y -u 1 en islandora_scholar
 drush -y -u 1 en islandora_solr_config
-drush -y -u 1 en citation_exporter
-drush -y -u 1 en doi_importer
-drush -y -u 1 en endnotexml_importer
-drush -y -u 1 en pmid_importer
-drush -y -u 1 en ris_importer
-drush -y -u 1 en islandora_fits
-drush -y -u 1 en islandora_ocr
-drush -y -u 1 en islandora_oai
-drush -y -u 1 en islandora_marcxml
-drush -y -u 1 en islandora_simple_workflow
-drush -y -u 1 en islandora_xacml_api
-drush -y -u 1 en islandora_xacml_editor
-drush -y -u 1 en xmlsitemap xmlsitemap_custom
-drush -y -u 1 en islandora_xmlsitemap
-drush -y -u 1 en colorbox
-drush -y -u 1 en islandora_internet_archive_bookreader
-drush -y -u 1 en islandora_bagit
-drush -y -u 1 en islandora_batch_report
-drush -y -u 1 en islandora_usage_stats
-drush -y -u 1 en islandora_form_fieldpanel
-drush -y -u 1 en islandora_altmetrics
-drush -y -u 1 en islandora_populator
-drush -y -u 1 en islandora_newspaper_batch
-drush -y -u 1 en islandora_openseadragon
-drush -y -u 1 en views_ui
-drush -y -u 1 en webform
-drush -y -u 1 en webform_ajax
-drush -y -u 1 en webform_bonus
-drush -y -u 1 en islandora_webform
-drush -y -u 1 en islandora_webform_ingest
-drush openseadragon-plugin
-drush videojs-plugin
+drush -y -u 1 en eu_cookie_compliance
 drush pdfjs-plugin
-drush iabookreader-plugin
 # Due to Islandora Paged Content Module install hook, the islandora_paged_content_gs variable is overwritten by the install / enabling of the module back to /usr/bin/gs
 echo "Rerunning drush vset to ensure that Ghostscript works for the PDF DERIVATIVE SETTINGS"
 drush -u 1 -y vset islandora_paged_content_gs "/usr/bin/gs"
 
 echo "Re-running the islandora_video_mp4_audio_codec vset!"
 drush @sites -u 1 -y vset islandora_video_mp4_audio_codec "aac"
-
-echo "Installing new citeproc v2 library for Islandora scholar"
-cd /var/www/html/sites/all/modules/islandora/islandora_scholar/modules/citeproc || exit
-
-composer install
 
 echo "Back to /var/www/html/sites/all/modules"
 cd /var/www/html/sites/all/modules || exit
